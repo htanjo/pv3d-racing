@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA version="1.4.0" xmlns="http://www.collada.org/2005/11/COLLADASchema">
+	<asset>
+		<contributor>
+			<author>Illusoft Collada 1.4.0 plugin for Blender - http://colladablender.illusoft.com</author>
+			<authoring_tool>Blender v:246 - Illusoft Collada Exporter v:0.3.159</authoring_tool>
+			<comments></comments>
+			<copyright></copyright>
+			<source_data>file://C:/</source_data>
+		</contributor>
+		<created>2009-01-11T02:14:19.774000</created>
+		<modified>2009-01-11T02:14:19.775000</modified>
+		<unit meter="0.01" name="centimeter"/>
+		<up_axis>Z_UP</up_axis>
+	</asset>
+	<library_effects>
+		<effect id="tx_lamp_png-fx" name="tx_lamp_png-fx">
+			<profile_COMMON>
+				<newparam sid="tx_lamp_png-surface">
+					<surface type="2D">
+						<init_from>tx_lamp_png-img</init_from>
+						<format>A8R8G8B8</format>
+					</surface>
+				</newparam>
+				<newparam sid="tx_lamp_png-sampler">
+					<sampler2D>
+						<source>tx_lamp_png-surface</source>
+						<minfilter>LINEAR_MIPMAP_LINEAR</minfilter>
+						<maxfilter>LINEAR</maxfilter>
+					</sampler2D>
+				</newparam>
+				<technique sid="blender">
+					<lambert>
+						<emission>
+							<color>0.00000 0.00000 0.00000 1</color>
+						</emission>
+						<ambient>
+							<color>0.39216 0.39216 0.39216 1</color>
+						</ambient>
+						<diffuse>
+							<texture texcoord="CHANNEL1" texture="tx_lamp_png-sampler"/>
+						</diffuse>
+						<reflective>
+							<color>1.00000 1.00000 1.00000 1</color>
+						</reflective>
+						<reflectivity>
+							<float>0.0</float>
+						</reflectivity>
+						<transparent>
+							<color>1 1 1 1</color>
+						</transparent>
+						<transparency>
+							<float>0.0</float>
+						</transparency>
+					</lambert>
+				</technique>
+			</profile_COMMON>
+		</effect>
+	</library_effects>
+	<library_images>
+		<image id="tx_lamp_png-img" name="tx_lamp_png-img">
+			<init_from>tx_lamp.png</init_from>
+		</image>
+	</library_images>
+	<library_materials>
+		<material id="tx_lamp_png" name="tx_lamp_png">
+			<instance_effect url="#tx_lamp_png-fx"/>
+		</material>
+	</library_materials>
+	<library_geometries>
+		<geometry id="Mesh_005-Geometry" name="Mesh_005-Geometry">
+			<mesh>
+				<source id="Mesh_005-Geometry-Position">
+					<float_array count="30" id="Mesh_005-Geometry-Position-array">8.50000 -18.20000 3.95000 8.20000 -18.00000 6.90000 4.10000 -19.20000 7.20000 4.20000 -19.70000 4.05000 -8.50000 -18.20000 3.95000 -8.20000 -18.00000 6.90000 -4.10000 -19.20000 7.20000 -4.20000 -19.70000 4.05000 0.00000 -20.20000 4.15000 0.00000 -19.60000 7.30000</float_array>
+					<technique_common>
+						<accessor count="10" source="#Mesh_005-Geometry-Position-array" stride="3">
+							<param type="float" name="X"></param>
+							<param type="float" name="Y"></param>
+							<param type="float" name="Z"></param>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Mesh_005-Geometry-Normals">
+					<float_array count="12" id="Mesh_005-Geometry-Normals-array">0.30901 -0.94235 0.12840 0.11029 -0.97879 0.17265 -0.30901 -0.94235 0.12840 -0.11029 -0.97879 0.17265</float_array>
+					<technique_common>
+						<accessor count="4" source="#Mesh_005-Geometry-Normals-array" stride="3">
+							<param type="float" name="X"></param>
+							<param type="float" name="Y"></param>
+							<param type="float" name="Z"></param>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="Mesh_005-Geometry-UV">
+					<float_array count="48" id="Mesh_005-Geometry-UV-array">0.88122 0.39104 0.86777 0.60055 0.68388 0.62186 0.68388 0.62186 0.68837 0.39814 0.88122 0.39104 0.68837 0.39814 0.68388 0.62186 0.50000 0.62896 0.50000 0.62896 0.50000 0.40524 0.68837 0.39814 0.31612 0.62186 0.13223 0.60055 0.11878 0.39104 0.11878 0.39104 0.31163 0.39814 0.31612 0.62186 0.50000 0.62896 0.31612 0.62186 0.31163 0.39814 0.31163 0.39814 0.50000 0.40524 0.50000 0.62896</float_array>
+					<technique_common>
+						<accessor count="24" source="#Mesh_005-Geometry-UV-array" stride="2">
+							<param type="float" name="S"></param>
+							<param type="float" name="T"></param>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="Mesh_005-Geometry-Vertex">
+					<input semantic="POSITION" source="#Mesh_005-Geometry-Position"/>
+				</vertices>
+				<triangles count="8" material="tx_lamp_png">
+					<input offset="0" semantic="VERTEX" source="#Mesh_005-Geometry-Vertex"/>
+					<input offset="1" semantic="NORMAL" source="#Mesh_005-Geometry-Normals"/>
+					<input offset="2" semantic="TEXCOORD" source="#Mesh_005-Geometry-UV"/>
+					<p>0 0 0 1 0 1 2 0 2 2 0 3 3 0 4 0 0 5 3 1 6 2 1 7 9 1 8 9 1 9 8 1 10 3 1 11 6 2 12 5 2 13 4 2 14 4 2 15 7 2 16 6 2 17 9 3 18 6 3 19 7 3 20 7 3 21 8 3 22 9 3 23</p>
+				</triangles>
+			</mesh>
+		</geometry>
+	</library_geometries>
+	<library_visual_scenes>
+		<visual_scene id="Scene" name="Scene">
+			<node layer="L1" id="Mesh_005" name="Mesh_005">
+				<translate sid="translate">0.00000 0.00000 0.00000</translate>
+				<rotate sid="rotateZ">0 0 1 0.00000</rotate>
+				<rotate sid="rotateY">0 1 0 0.00000</rotate>
+				<rotate sid="rotateX">1 0 0 0.00000</rotate>
+				<scale sid="scale">1.00000 1.00000 1.00000</scale>
+				<instance_geometry url="#Mesh_005-Geometry">
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="tx_lamp_png" target="#tx_lamp_png">
+								<bind_vertex_input input_semantic="TEXCOORD" input_set="1" semantic="CHANNEL1"/>
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_geometry>
+			</node>
+		</visual_scene>
+	</library_visual_scenes>
+	<scene>
+		<instance_visual_scene url="#Scene"/>
+	</scene>
+</COLLADA>
